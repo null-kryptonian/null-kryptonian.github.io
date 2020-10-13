@@ -1,6 +1,6 @@
 # A simple Number Converter app.
 
-## Added Featuers:
+## Added Features:
   <ul type="square">
     <li>Decimal to Binary</li>
     <li>Binary One's Complement</li>
