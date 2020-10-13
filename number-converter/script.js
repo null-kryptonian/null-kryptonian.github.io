@@ -23,9 +23,9 @@ $(document).on('click', '#convert-btn', function (e) {
     } else if(value1 === "Binary" && value2 === "Decimal") {
         var x = document.getElementById("x").value;
         var decimal = convertToDecimal(x)
-        var binary = convertToBinary(x)
+        var onesComp = onesComplement(x);
         document.getElementById("y").value = decimal;
-        // document.getElementById("y1").value = binary;
+        document.getElementById("y1").value = onesComp;
         // document.getElementById("y2").value = binary;
     }
 });
