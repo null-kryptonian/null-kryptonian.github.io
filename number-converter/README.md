@@ -3,6 +3,8 @@
 ## Added Featuers:
   <ul type="square">
     <li>Decimal to Binary</li>
+    <li>Binary One's Complement</li>
+    <li>Binary Two's Complement</li>
     <li>Binary to decimal</li>
 </ul>
 
