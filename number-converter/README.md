@@ -1,5 +1,8 @@
-A simple number converter app.
+# A simple Number Converter app.
 
-Added Featuers:
-  Binary to Decimal
-  Decimal to Binary
+## Added Featuers:
+  1. Binary to Decimal
+  2. Decimal to Binary
+
+## Visit here
+https://superior-prog.github.io/number-converter
