@@ -7,5 +7,5 @@
 </ul>
 
 ## Visit here
-<a target="_blank" href="https://superior-prog.github.io/number-converter">Number Converter</a>
+<a href="https://superior-prog.github.io/number-converter" target="_blank">Number Converter</a>
 
