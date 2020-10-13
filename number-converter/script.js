@@ -51,10 +51,10 @@ function convertToBinary(x) {
 
 function onesComplement(x) {
     let comp = 0;
-    let rem, i = 1, step = 1;
+    let rem, i = 1;
     while (x != 0) {
         rem = x % 10;
-        if(rem === 1) {
+        if (rem === 1) {
             rem = 0;
             rem *= i
             comp += rem;
