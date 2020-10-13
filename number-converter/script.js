@@ -17,9 +17,11 @@ $(document).on('click', '#convert-btn', function (e) {
         var x = document.getElementById("x").value;
         var binary = convertToBinary(x);
         var onesComp = onesComplement(binary);
+        var one = 1;
+        var twosComp = addBinary(onesComp.toString(), one.toString());
         document.getElementById("y").value = binary;
         document.getElementById("y1").value = onesComp;
-        // document.getElementById("y2").value = binary;
+        document.getElementById("y2").value = twosComp;
     } else if(value1 === "Binary" && value2 === "Decimal") {
         var x = document.getElementById("x").value;
         var decimal = convertToDecimal(x)
@@ -78,6 +80,26 @@ function onesComplement(x) {
     }
     return comp;
 }
+
+function addBinary(a, b) {
+    var i = a.length - 1;
+    var j = b.length - 1;
+    var carry = 0;
+    var result = "";
+    while (i >= 0 || j >= 0) {
+        var m = i < 0 ? 0 : a[i] | 0;
+        var n = j < 0 ? 0 : b[j] | 0;
+        carry += m + n; // sum of two digits
+        result = carry % 2 + result; // string concat
+        carry = carry / 2 | 0; // remove decimals,  1 / 2 = 0.5, only get 0
+        i--;
+        j--;
+    }
+    if (carry !== 0) {
+        result = carry + result;
+    }
+    return result;
+};
 
 function convertToDecimal(x) {
     let dec = 0, i = 0, rem;
