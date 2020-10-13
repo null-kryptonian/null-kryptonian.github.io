@@ -5,4 +5,5 @@
   2. Decimal to Binary
 
 ## Visit here
-https://superior-prog.github.io/number-converter
+<a target="_blank" href="https://superior-prog.github.io/number-converter">Number Converter</a>
+
