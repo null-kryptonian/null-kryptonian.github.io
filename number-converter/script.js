@@ -36,6 +36,15 @@ $(document).on('click', '#reset-btn', function (e) {
     document.getElementById("x").clear;
 });
 
+function allDigits(input) {
+    var regex = /[^0-9]/;
+    input.value = input.value.replace(regex, "");
+}
+
+function zeroOneOnly(input) {
+    var regex = /[^0-1]/;
+    input.value = input.value.replace(regex, "");
+}
 
 function convertToBinary(x) {
     let bin = 0;
