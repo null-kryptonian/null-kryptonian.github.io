@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Number Converter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Decimal to Binary converter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <br>
+    <div class="card" style="max-width:500px;">
+        <div class="card-body">
+            <div id="unitnav" class="form-row mb-2 input-part" style="max-width:500px;">
+                <div class="form-group col">
+                    <label for="unit1">From</label>
+                    <select id="unit1" class="form-control">
+                         <!-- <option>Binary</option> -->
+                        <option selected="">Decimal</option>
+                        <!-- <option>Hexadecimal</option> -->
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label for="unit2">To</label>
+                    <select id="unit2" class="form-control">
+                        <option selected="">Binary</option>
+                        <!-- <option>Decimal</option>
+                        <option>Hexadecimal</option> -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card" style="max-width:500px;">
+        <div class="card-body">
+            <form name="calcform" autocomplete="off">
+                <div class="calc">
+                    <p colspan="2"><label for="x">Enter decimal number:</label></p>
+                    <div class="form-field">
+                        <input type="text" inputmode="numeric" id="x" name="x" class="form-control form-control-lg"
+                            required="" autofocus="" tabindex="1" style="background-color: white;">
+                    </div>
+                    <br>
+                    <div>
+                        <button type="button" title="Convert" id="convert-btn" class="btn btn-primary"><img
+                                src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_030_refresh.png"
+                                alt="">
+                            Convert</button>
+                        <button type="reset" title="Reset" class="btn btn-secondary" id="reset_btn" onclick=""><img
+                                src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_013_remove.png"
+                                alt=""> Reset</button>
+                        <button type="button" title="Swap conversion" class="btn btn-secondary" onclick="location.href='binToDec.html'"><img
+                                src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_114_retweet.png"
+                                alt=""> Swap</button>
+                    </div><br>
+                    <div>
+                        <p>Binary number:</p>
+                        <textarea rows="2" id="y" class="form-control form-control-lg" readonly=""
+                            tabindex="5"></textarea>
+                    </div><br>
+                    <!-- <div>
+                        <p>Binary signed 1's complement:</p>
+                        <textarea rows="2" id="y1" class="form-control form-control-lg" readonly=""
+                            tabindex="6"></textarea>
+                    </div><br>
+                    <div>
+                        <p>Binary signed 2's complement:</p>
+                        <textarea rows="2" id="y2" class="form-control form-control-lg" readonly=""
+                            tabindex="6"></textarea>
+                    </div> -->
+                </div>
+                <!-- <table class="calc">
+                    <tbody> -->
+                <!-- <tr>
+                        </tr> -->
+                <!-- <tr>
+                            <td><input type="text" inputmode="numeric" id="x" name="x"
+                                    class="form-control form-control-lg" required="" autofocus="" tabindex="1"
+                                    style="background-color: white;"></td>
+                            <td class="mathsymbol"><sub>10</sub></td>
+                        </tr> -->
+                <!-- <tr>
+                            <td colspan="2"> -->
+                <!-- <button type="button" title="Convert" class="btn btn-primary" tabindex="2"
+                                    onclick="convert()"><img
+                                        src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_030_refresh.png"
+                                        alt=""> Convert</button>
+                                <button type="reset" title="Reset" class="btn btn-secondary" tabindex="3"><img
+                                        src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_013_remove.png"
+                                        alt=""> Reset</button>
+                                <button type="button" title="Swap conversion" class="btn btn-secondary" tabindex="4"
+                                    onclick="location.href='binary-to-decimal.html';"><img
+                                        src="/lib/icons/glyphicons_all/glyphicons_halflings/glyphicons_halflings_114_retweet.png"
+                                        alt=""> Swap</button> -->
+                <!-- </td>
+                        </tr> -->
+                <!-- <tr>
+                            <td colspan="2">Binary number:</td>
+                        </tr> -->
+                <!-- <tr>
+                            <td><textarea rows="2" id="y" class="form-control form-control-lg" readonly=""
+                                    tabindex="5"></textarea>
+                            </td>
+                            <td class="mathsymbol"><sub>2</sub></td>
+                        </tr>
+                        <tr> -->
+                <!-- <td colspan="2">Binary signed 2's complement:</td>
+                        </tr>
+                        <tr>
+                            <td><textarea rows="2" id="y2" class="form-control form-control-lg" readonly=""
+                                    tabindex="6"></textarea>
+                            </td>
+                            <td class="mathsymbol"><sub>2</sub></td>
+                        </tr> -->
+                <!-- <tr>
+                            <td colspan="2">Hex number:</td>
+                        </tr>
+                        <tr>
+                            <td><textarea rows="2" id="y5" class="form-control form-control-lg" readonly=""
+                                    tabindex="7"></textarea>
+                            </td>
+                            <td class="mathsymbol"><sub>16</sub></td>
+                        </tr> -->
+                <!-- <tr>
+                            <td colspan="2">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="group" onclick="ongroup()">
+                                    <label class="form-check-label" for="group">Digit grouping</label>
+                                </div>
+                            </td>
+                        </tr> -->
+                <!-- </tbody>
+                </table> -->
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="script.js" async defer></script>
+</body>
+
+</html>
