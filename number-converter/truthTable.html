@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Number Converter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Decimal to Binary converter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Decimal to Binary</a>
+                        <a class="dropdown-item" href="binToDec.html">Binary to Decimal</a>
+                        <a class="dropdown-item" href="binaryAddition.html">Binary Addition</a>
+                        <a class="dropdown-item" href="signedTwosComplement.html">Signed 2's Complement</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="card" style="max-width:500px;">
+        <div class="card-body">
+            <!-- <p>Number of Bits:</p>
+            <div class="form-field">
+                <input type="text" inputmode="numeric" placeholder="1....5" id="bit" name="bit"
+                    class="form-control form-control-lg" required="" autofocus="" tabindex="1" onkeyup="allDigits(this)"
+                    style="background-color: white;">
+            </div><br>
+            <div>
+                <button type="button" title="Convert" id="generate-btn" class="btn btn-primary">
+                    Generate</button>
+            </div>
+            <hr> -->
+            <div id="dvTable">
+                <table id="binaryTable" class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th colspan="2" scope="col">Binary Unsigned Number</th>
+                            <th colspan="2" scope="col">Binary Signed Number</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Binary </th>
+                            <th scope="col">Decimal</th>
+                            <th scope="col">Binary </th>
+                            <th scope="col">Decimal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">0000</th>
+                            <td>0</td>
+                            <th>0000</th>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0001</th>
+                            <td>1</td>
+                            <th>0001</th>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0010</th>
+                            <td>2</td>
+                            <th>0010</th>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0011</th>
+                            <td>3</td>
+                            <th>0011</th>
+                            <td>+3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0100</th>
+                            <td>4</td>
+                            <th>0100</th>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0101</th>
+                            <td>5</td>
+                            <th>0101</th>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0110</th>
+                            <td>6</td>
+                            <th>0110</th>
+                            <td>+6</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0111</th>
+                            <td>7</td>
+                            <th>0111</th>
+                            <td>+7</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1000</th>
+                            <td>8</td>
+                            <th>1111</th>
+                            <td>-8</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1001</th>
+                            <td>9</td>
+                            <th>1001</th>
+                            <td>-7</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1010</th>
+                            <td>10</td>
+                            <th>1010</th>
+                            <td>-6</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1011</th>
+                            <td>11</td>
+                            <th>1011</th>
+                            <td>-5</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1100</th>
+                            <td>12</td>
+                            <th>1100</th>
+                            <td>-4</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1101</th>
+                            <td>13</td>
+                            <th>1101</th>
+                            <td>-3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1110</th>
+                            <td>14</td>
+                            <th>1110</th>
+                            <td>-2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1111</th>
+                            <td>15</td>
+                            <th>1111</th>
+                            <td>-1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="script.js" async defer></script>
+</body>
+
+</html>
