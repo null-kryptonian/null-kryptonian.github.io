@@ -39,66 +39,191 @@
     </nav>
 
     <br>
-    <div class="card" style="max-width:500px;">
-        <div class="card-body">
-            <div id="unitnav" class="form-row mb-2 input-part" style="max-width:500px;">
-                <div class="form-group col">
-                    <label for="unit1">From</label>
-                    <select id="unit1" class="form-control">
-                         <!-- <option>Binary</option> -->
-                        <option selected="">Decimal</option>
-                        <!-- <option>Hexadecimal</option> -->
-                    </select>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card" style="max-width:500px;">
+                    <div class="card-body">
+                        <div id="unitnav" class="form-row mb-2 input-part" style="max-width:500px;">
+                            <div class="form-group col">
+                                <label for="unit1">From</label>
+                                <select id="unit1" class="form-control">
+                                     <!-- <option>Binary</option> -->
+                                    <option selected="">Decimal</option>
+                                    <!-- <option>Hexadecimal</option> -->
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="unit2">To</label>
+                                <select id="unit2" class="form-control">
+                                    <option selected="">Binary</option>
+                                    <!-- <option>Decimal</option>
+                                    <option>Hexadecimal</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group col">
-                    <label for="unit2">To</label>
-                    <select id="unit2" class="form-control">
-                        <option selected="">Binary</option>
-                        <!-- <option>Decimal</option>
-                        <option>Hexadecimal</option> -->
-                    </select>
+
+                <br>
+
+                <div class="card" style="max-width:500px;">
+                    <div class="card-body">
+                        <form name="calcform" autocomplete="off">
+                            <div class="calc">
+                                <p colspan="2"><label for="x">Enter decimal number:</label></p>
+                                <div class="form-field">
+                                    <input type="text" inputmode="numeric" id="x" name="x" class="form-control form-control-lg"
+                                        required="" placeholder="145235" autofocus="" tabindex="1" onkeyup="allDigits(this)" style="background-color: white;">
+                                </div>
+                                <br>
+                                <div>
+                                    <button type="button" title="Convert" id="convert-btn" class="btn btn-primary">
+                                        Convert</button>
+                                    <button type="reset" title="Reset" class="btn btn-secondary" id="reset_btn" onclick="">Reset</button>
+                                    <button type="button" title="Swap conversion" class="btn btn-secondary" onclick="location.href='binToDec.html'">Swap</button>
+                                </div><br>
+                                <div>
+                                    <p>Binary number:</p>
+                                    <textarea rows="2" id="y" class="form-control form-control-lg" readonly=""
+                                        tabindex="5"></textarea>
+                                </div><br>
+                                <div>
+                                    <p>Binary 1's complement:</p>
+                                    <textarea rows="2" id="y1" class="form-control form-control-lg" readonly=""
+                                        tabindex="6"></textarea>
+                                </div><br>
+                                <div>
+                                    <p>Binary 2's complement:</p>
+                                    <textarea rows="2" id="y2" class="form-control form-control-lg" readonly=""
+                                        tabindex="6"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card" style="max-width:500px;">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th colspan="2" scope="col">Binary Unsigned</th>
+                                        <th colspan="2" scope="col">Binary Signed</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Binary </th>
+                                        <th scope="col">Decimal</th>
+                                        <th scope="col">Binary </th>
+                                        <th scope="col">Decimal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">0000</th>
+                                        <td>0</td>
+                                        <th>0000</th>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0001</th>
+                                        <td>1</td>
+                                        <th>0001</th>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0010</th>
+                                        <td>2</td>
+                                        <th>0010</th>
+                                        <td>+2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0011</th>
+                                        <td>3</td>
+                                        <th>0011</th>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0100</th>
+                                        <td>4</td>
+                                        <th>0100</th>
+                                        <td>+4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0101</th>
+                                        <td>5</td>
+                                        <th>0101</th>
+                                        <td>+5</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0110</th>
+                                        <td>6</td>
+                                        <th>0110</th>
+                                        <td>+6</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">0111</th>
+                                        <td>7</td>
+                                        <th>0111</th>
+                                        <td>+7</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1000</th>
+                                        <td>8</td>
+                                        <th>1111</th>
+                                        <td>-8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1001</th>
+                                        <td>9</td>
+                                        <th>1001</th>
+                                        <td>-7</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1010</th>
+                                        <td>10</td>
+                                        <th>1010</th>
+                                        <td>-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1011</th>
+                                        <td>11</td>
+                                        <th>1011</th>
+                                        <td>-5</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1100</th>
+                                        <td>12</td>
+                                        <th>1100</th>
+                                        <td>-4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1101</th>
+                                        <td>13</td>
+                                        <th>1101</th>
+                                        <td>-3</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1110</th>
+                                        <td>14</td>
+                                        <th>1110</th>
+                                        <td>-2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1111</th>
+                                        <td>15</td>
+                                        <th>1111</th>
+                                        <td>-1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <br>
-
-    <div class="card" style="max-width:500px;">
-        <div class="card-body">
-            <form name="calcform" autocomplete="off">
-                <div class="calc">
-                    <p colspan="2"><label for="x">Enter decimal number:</label></p>
-                    <div class="form-field">
-                        <input type="text" inputmode="numeric" id="x" name="x" class="form-control form-control-lg"
-                            required="" placeholder="145235" autofocus="" tabindex="1" onkeyup="allDigits(this)" style="background-color: white;">
-                    </div>
-                    <br>
-                    <div>
-                        <button type="button" title="Convert" id="convert-btn" class="btn btn-primary">
-                            Convert</button>
-                        <button type="reset" title="Reset" class="btn btn-secondary" id="reset_btn" onclick="">Reset</button>
-                        <button type="button" title="Swap conversion" class="btn btn-secondary" onclick="location.href='binToDec.html'">Swap</button>
-                    </div><br>
-                    <div>
-                        <p>Binary number:</p>
-                        <textarea rows="2" id="y" class="form-control form-control-lg" readonly=""
-                            tabindex="5"></textarea>
-                    </div><br>
-                    <div>
-                        <p>Binary 1's complement:</p>
-                        <textarea rows="2" id="y1" class="form-control form-control-lg" readonly=""
-                            tabindex="6"></textarea>
-                    </div><br>
-                    <div>
-                        <p>Binary 2's complement:</p>
-                        <textarea rows="2" id="y2" class="form-control form-control-lg" readonly=""
-                            tabindex="6"></textarea>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
 
 
