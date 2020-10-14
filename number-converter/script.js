@@ -26,9 +26,11 @@ $(document).on('click', '#convert-btn', function (e) {
         var x = document.getElementById("x").value;
         var decimal = convertToDecimal(x)
         var onesComp = onesComplement(x);
+        var one = 1;
+        var twosComp = addBinary(onesComp.toString(), one.toString());
         document.getElementById("y").value = decimal;
         document.getElementById("y1").value = onesComp;
-        // document.getElementById("y2").value = binary;
+        document.getElementById("y2").value = twosComp;
     }
 });
 
