@@ -19,7 +19,7 @@ $(document).on('click', '#convert-btn', function (e) {
         var onesComp = onesComplement(binary);
         var one = 1;
         var twosComp = addBinary(onesComp.toString(), one.toString());
-        document.getElementById("y").value = binary;
+        document.getElementById("y").value = binary + " (" + binary.toString().length + " bits)";
         document.getElementById("y1").value = onesComp;
         document.getElementById("y2").value = twosComp;
     } else if(value1 === "Binary" && value2 === "Decimal") {
