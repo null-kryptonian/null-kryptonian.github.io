@@ -6,7 +6,7 @@ $(document).on('click', '#dec-add-btn', function (e) {
     var bin1 = convertToBinary(dec1);
     var bin2 = convertToBinary(dec2);
     var result = addBinary(bin1.toString(), bin2.toString());
-    document.getElementById("decResult").value = result;
+    document.getElementById("decResult").value = result + " (" + result.length + " bits)";
 
 });
 
@@ -16,7 +16,7 @@ $(document).on('click', '#bin-add-btn', function (e) {
     var bin1 = document.getElementById("bin1").value;
     var bin2 = document.getElementById("bin2").value;
     var result = addBinary(bin1, bin2);
-    document.getElementById("binResult").value = result;
+    document.getElementById("binResult").value = result + " (" + result.length + " bits)";
 
 });
 
