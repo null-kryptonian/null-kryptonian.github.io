@@ -10,7 +10,7 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="binToDec.html">Binary to Decimal</a>
-                        <a class="dropdown-item" href="index.html">Decimal to Binary</a>
+                        <a class="dropdown-item" href="../index.html">Decimal to Binary</a>
                         <a class="dropdown-item" href="truthTable.html">Binary Truth Table</a>
                     </div>
                 </li>
@@ -46,29 +46,65 @@
         <div class="card-body">
             <form name="calcform" autocomplete="off">
                 <div class="calc">
+                    <p colspan="2"><label for="x">Enter first decimal number:</label></p>
+                    <div class="form-field">
+                        <input type="text" inputmode="numeric" placeholder="12563" id="dec1" name="dec1"
+                            class="form-control form-control-lg" required="" autofocus="" tabindex="1"
+                            onkeyup="allDigits(this)" style="background-color: white;">
+                    </div>
+                    <br>
+                    <p colspan="2"><label for="x">Enter second decimal number:</label></p>
+                    <div class="form-field">
+                        <input type="text" inputmode="numeric" placeholder="13562" id="dec2" name="dec2"
+                            class="form-control form-control-lg" required="" autofocus="" tabindex="1"
+                            onkeyup="allDigits(this)" style="background-color: white;">
+                    </div>
+                    <br>
+                    <div>
+                        <button type="button" title="Add" id="dec-add-btn" class="btn btn-primary">
+                            Add</button>
+                        <button type="reset" title="Reset" class="btn btn-secondary" id="reset_btn" onclick="">
+                            Reset</button>
+                    </div><br>
+                    <div>
+                        <p>Binary Sum:</p>
+                        <textarea rows="2" id="decResult" class="form-control form-control-lg" readonly=""
+                            tabindex="5"></textarea>
+                    </div><br>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div class="card" style="max-width:500px;">
+        <div class="card-body">
+            <form name="calcform" autocomplete="off">
+                <div class="calc">
                     <p colspan="2"><label for="x">Enter first binary number:</label></p>
                     <div class="form-field">
-                        <input type="text" inputmode="numeric" placeholder="1010101" id="x" name="x"
+                        <input type="text" inputmode="numeric" placeholder="1010101" id="bin1" name="bin1"
                             class="form-control form-control-lg" required="" autofocus="" tabindex="1"
                             onkeyup="zeroOneOnly(this)" style="background-color: white;">
                     </div>
                     <br>
                     <p colspan="2"><label for="x">Enter second binary number:</label></p>
                     <div class="form-field">
-                        <input type="text" inputmode="numeric" placeholder="1010101" id="y" name="x"
+                        <input type="text" inputmode="numeric" placeholder="1010101" id="bin2" name="bin2"
                             class="form-control form-control-lg" required="" autofocus="" tabindex="1"
                             onkeyup="zeroOneOnly(this)" style="background-color: white;">
                     </div>
                     <br>
                     <div>
-                        <button type="button" title="Add" id="add-btn" class="btn btn-primary">
+                        <button type="button" title="Add" id="bin-add-btn" class="btn btn-primary">
                             Add</button>
                         <button type="reset" title="Reset" class="btn btn-secondary" id="reset_btn" onclick="">
                             Reset</button>
                     </div><br>
                     <div>
-                        <p>Result:</p>
-                        <textarea rows="2" id="y1" class="form-control form-control-lg" readonly=""
+                        <p>Binary Sum:</p>
+                        <textarea rows="2" id="binResult" class="form-control form-control-lg" readonly=""
                             tabindex="5"></textarea>
                     </div><br>
                 </div>
@@ -86,7 +122,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <script src="addition.js" async defer></script>
+    <script src="../js/addition.js" async defer></script>
 </body>
 
 </html>
