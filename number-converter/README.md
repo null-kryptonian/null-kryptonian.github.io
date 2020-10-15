@@ -7,6 +7,7 @@
     <li>Binary Two's Complement</li>
     <li>Binary Addition</li>
     <li>Binary to decimal</li>
+    <li>Binary 4 bit Signed and Unsigned Truth Table</li>
 </ul>
 
 ## Visit here
