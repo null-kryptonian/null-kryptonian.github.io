@@ -19,7 +19,8 @@ function draw() {
   background(0, 0, 0, 25);
 
   if (random(2) < 0.15) {
-    fireworks.push(new Firework());
+    var firework = new Firework();
+    fireworks.push(firework);
   }
 
   for (var i = fireworks.length - 1; i >= 0; i--) {
