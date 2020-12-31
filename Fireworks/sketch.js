@@ -1,5 +1,16 @@
 var fireworks = [];
+var firework;
 var gravity;
+var sound;
+
+function preload() {
+  sound = loadSound("FireWorks-Sound.mp3");
+}
+
+function mousePressed() {
+  sound.play();
+}
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -8,18 +19,14 @@ function setup() {
   stroke(255);
   strokeWeight(4);
   background(0);
-
-  // for (var i = 0; i < 16; i++) {
-  //   fireworks.push(new Firework());
-  // }
 }
 
 function draw() {
   colorMode(RGB);
   background(0, 0, 0, 25);
 
-  if (random(2) < 0.15) {
-    var firework = new Firework();
+  if (random(2) < 0.3) {
+    firework = new Firework();
     fireworks.push(firework);
   }
 
