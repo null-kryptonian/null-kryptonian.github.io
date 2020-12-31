@@ -26,7 +26,7 @@ function draw() {
   background(0, 0, 0, 25);
 
   if (random(2) < 0.3) {
-    firework = new Firework();
+    firework = new FireWork();
     fireworks.push(firework);
   }
 
