@@ -4,7 +4,8 @@ let maxX;
 let toothpickList = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(600, 600);
+  canvas.center();
 
   minX = -width / 2;
   maxX = width / 2;
